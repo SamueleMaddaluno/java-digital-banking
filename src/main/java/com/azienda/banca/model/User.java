@@ -31,6 +31,9 @@ public class User {
     @Column(unique=true, nullable=false)
     private String email;
 
+    @NotBlank(message = "Password is required")
+    @Column(nullable = false)
+    private String password;
 
     private String role= "ROLE_USER";
 }
