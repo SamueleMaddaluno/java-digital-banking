@@ -24,8 +24,8 @@ public class TransactionService {
     private AccountRepository accountRepository;
 
     @Transactional
-    public void executeTransalction(Account account, BigDecimal amount, String type, String description){
-        if("DPOSIT".equals(type)){
+    public void executeTransaction(Account account, BigDecimal amount, String type, String description){
+        if("DEPOSIT".equals(type)){
             account.setBalance(account.getBalance().add(amount));
         }
         else if("WITHDRAW".equals(type)){
@@ -52,3 +52,4 @@ public class TransactionService {
     }
 
 }
+
