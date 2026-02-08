@@ -2,6 +2,8 @@ package com.azienda.banca.model;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,5 +32,6 @@ public class Account {
 
     @ManyToOne
     @JoinColumn(name="user_id",nullable=false)
+    @JsonIgnore
     private User user;
 }

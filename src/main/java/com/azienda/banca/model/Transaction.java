@@ -4,6 +4,8 @@ package com.azienda.banca.model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +37,7 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name="account_id", nullable=false)
+    @JsonIgnore
     private Account account;
     
 }
